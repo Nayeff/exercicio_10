@@ -27,31 +27,29 @@ $(document).ready(function() {
                 required: true
             },
             cep: {
-                required: true,
-                minlenght: 9,
+                required: true
             },
             cpf: {
-                required: true,
-                minlenght: 10,
+                required: true
             },
         },
         messages: {
             nome: 'Por favor, insira o seu nome',
-            email: 'Por favor, insira o seu email valido',
+            email: 'Por favor, insira o seu email válido',
             telefone: 'Por favor, insira o seu telefone',
             endereco: 'Por favor, insira o endereço',
             cep: 'Por favor, insira o CEP',
-            cpf: 'Por favro, insira o CPF'
+            cpf: 'Por favor, insira o CPF'
         },
         submitHandler: function(form) {
             alert("Sua requisição foi enviada para análise, parabéns pela aquisição!");
             form.submit();
         },
-        invalidHandler: function (form, validator) {
+        invalidHandler: function (evento, validator) {
             let camposIncorretos = validator.numberOfInvalids();
             
             if(camposIncorretos){
-                alert(`Por favor,existem ${camposIncorretos} preencha os campos para prosseguir com a compra!`);
+                alert(`Existem ${camposIncorretos} campos vazios, por favor preencha para continuar a compra!`);
             }
         }
     })
